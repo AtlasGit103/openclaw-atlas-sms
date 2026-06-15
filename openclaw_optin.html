@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Notifications — OpenClaw</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f6f8;
+    color: #1f2937;
+    margin: 0;
+    padding: 2rem 1rem;
+    line-height: 1.55;
+  }
+  .container {
+    max-width: 560px;
+    margin: 1.5rem auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .brand {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #4f46e5;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.25rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  .lede {
+    color: #4b5563;
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #111827;
+  }
+  input[type="tel"] {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    font-family: inherit;
+  }
+  input[type="tel"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  }
+  .consent {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .consent input[type="checkbox"] {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .consent-text {
+    font-size: 0.85rem;
+    color: #374151;
+  }
+  .consent-text a {
+    color: #4f46e5;
+    text-decoration: underline;
+  }
+  button {
+    width: 100%;
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { background: #4338ca; }
+  .footer {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-align: center;
+  }
+  .footer a { color: #6b7280; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="brand">OpenClaw</div>
+  <h1>SMS Notification Enrollment</h1>
+  <p class="lede">System administrators: enroll your mobile number to receive automated operational notifications from the OpenClaw platform.</p>
+
+  <form onsubmit="event.preventDefault(); document.getElementById('confirm').style.display='block';">
+    <label for="phone">Mobile phone number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555" required>
+
+    <p style="font-size: 0.8rem; color: #6b7280; margin: 0 0 0.4rem 0;">SMS notifications are optional. You can use the OpenClaw platform without enrolling in SMS, and consent to SMS is not required for any service.</p>
+    <div class="consent">
+      <input type="checkbox" id="consent" name="consent">
+      <label for="consent" class="consent-text" style="font-weight: normal; margin: 0;">
+        By providing my mobile number and checking this box, I agree to receive
+        recurring automated SMS messages from the OpenClaw platform, including
+        task completion notifications, system alerts, scheduled reminders, and
+        two-factor authentication codes. Message frequency varies. Message and
+        data rates may apply. Reply HELP for help, STOP to cancel. No mobile
+        information will be shared with third parties or affiliates for
+        marketing or promotional purposes. See our
+        <a href="https://docs.google.com/document/d/1j37GLXADNC9D2o1s6ACcsoFVNCtcdKAK/edit?usp=sharing" target="_blank">Privacy Policy</a> and
+        <a href="https://docs.google.com/document/d/1Dc2L5PAj6gaGzFDq2QjQFja8_qMxJaQQ/edit?usp=sharing" target="_blank">Terms of Service</a>.
+      </label>
+    </div>
+
+    <button type="submit">Enroll</button>
+  </form>
+
+  <p id="confirm" style="display:none; margin-top: 1rem; padding: 0.75rem; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 6px; color: #065f46; font-size: 0.9rem;">
+    Enrollment submitted. Your number will be added to the system.
+  </p>
+
+  <div class="footer">
+    OpenClaw &middot; Automation &amp; monitoring platform &middot;
+    <a href="https://docs.google.com/document/d/1j37GLXADNC9D2o1s6ACcsoFVNCtcdKAK/edit?usp=sharing">Privacy</a> &middot;
+    <a href="https://docs.google.com/document/d/1Dc2L5PAj6gaGzFDq2QjQFja8_qMxJaQQ/edit?usp=sharing">Terms</a>
+  </div>
+</div>
+
+</body>
+</html>
